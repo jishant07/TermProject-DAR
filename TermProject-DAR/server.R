@@ -4,7 +4,7 @@ library(dplyr)
 library(DT)
 
 studentPerformanceData <- as.data.frame(read.csv("./dataset/student-por.csv",sep = ";",stringsAsFactors = TRUE))
-germanCreditData <- as.data.frame(read.csv("./dataset/german_credit_data.csv"))
+datasetDescription <- read.csv("./dataset/dataset_description.csv")
 
 primary <- "#75f4f4"
 secondary <- "#fffd82"
@@ -27,20 +27,6 @@ server <- function(input, output, session) {
     summary(studentPerformanceData)
   })
   
-  output$studentAge_hist <- renderPlot({
-    ggplot(studentPerformanceData, aes(age)) +
-      geom_histogram(fill=primary,color=tertiary,binwidth=1)
-  })
-  
-  output$studentAge_boxplot <- renderPlot({
-    ggplot(studentPerformanceData, aes(age)) +
-      geom_boxplot(fill=primary,color=tertiary)
-  })
-  
-  output$student_mvf <- renderPlot({
-    ggplot(studentPerformanceData, aes(sex)) + geom_bar(fill=primary, color=tertiary)
-  })
-  
   output$student_corrplot <- renderPlot({
     corrplot(cor(studentPerformanceData[sapply(studentPerformanceData, class) == "integer"]))
   })
@@ -59,7 +45,8 @@ server <- function(input, output, session) {
   
   output$distribution_plot <- renderPlot({
     column_selected <- input$distribution_variable
-    ggplot(studentPerformanceData, aes_string(column_selected)) + geom_bar(fill=primary, color=tertiary)
+    ggplot(studentPerformanceData, aes_string(column_selected)) + geom_bar(fill=primary, color=tertiary) + 
+      theme(axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"))
   })
   
   output$x_axis_chisq <- renderText({input$x_axis})
@@ -78,7 +65,8 @@ server <- function(input, output, session) {
   
   output$regression <- renderPlot({
     ggplot(studentPerformanceData,aes_string(x=input$x_axis_regression, y=input$y_axis_regression)) + geom_point(color=tertiary) + 
-      geom_smooth(method = 'lm', color=primary)
+      geom_smooth(method = 'lm', color=primary) + 
+      theme(axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"))
   })
   
   output$chi_sq_test <- renderPrint({
@@ -86,6 +74,9 @@ server <- function(input, output, session) {
     y <- input$y_axis
     chisq.test(as.matrix(studentPerformanceData[x]),as.matrix(studentPerformanceData[y]))
   })
-
+  
+  output$dataset_description <- renderTable({
+    datasetDescription
+  })
   
 }

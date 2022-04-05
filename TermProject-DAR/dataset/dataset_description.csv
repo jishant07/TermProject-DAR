@@ -1,0 +1,34 @@
+﻿variable,type,description
+school,categorical,One of 2 MS (Mousinho da Silveira) and GP (Gabriel Pereira)
+sex,categorical,M (MALE) / F (FEMALE)
+age,numerical,Age between 15 & 22
+address,categorical,U (Urban) / R (Rural)
+famsize,categorical,GT3 (Greater than 4) / LT3 (Lesser Than 3)
+Pstatus,categorical,"Cohabitation Status, T (Living together with Parents) / A (Living Alone)"
+Medu,categorical,"0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education"
+Fedu,categorical,"0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education"
+Mjob,categorical,"teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other'"
+Fjob,categorical,"teacher', 'health' care related, civil 'services' (e.g. administrative or police), 'at_home' or 'other'"
+reason,categorical,Reason to Choose the School
+guardian,categorical,"Father, Mother or Other"
+traveltime,categorical,"1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour"
+studytime,categorical,"1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour"
+failures,categorical,Between 1-3 and 4 if greater than 3
+schoolsup,categorical,Support From School  (yes/no)
+famsup,categorical,Support From Family  (yes/no)
+paid,categorical,Paid Classes (yes/no)
+activities,categorical,Extarcurriculars (yes/no)
+nursery,categorical,Attended Nursery (yes/no)
+higher,categorical,Wants to do Hire studies (yes/no)
+internet,categorical,Has access to internet (yes/no)
+romantic,categorical,Involved in romatic relation (yes/no)
+famrel,categorical,Quality of Family Relations from 1 - very bad to 5 - excellent
+freetime,categorical,Free Time after School from 1 - very bad to 5 - excellent
+goout,categorical,Going out with friends from 1 - very bad to 5 - excellent
+Dalc,categorical,Daily alcohol intake from 1 - very bad to 5 - excellent
+Walc,categorical,Weekly Alcohol intake from 1 - very bad to 5 - excellent
+health,categorical,Current health quality from 1 - very bad to 5 - very good
+absences,continuous,Between 0-93
+G1,continuous,Between 0-20
+G2,continuous,Between 0-20
+G3,continuous,Between 0-20

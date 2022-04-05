@@ -1,17 +1,18 @@
 library(shiny)
 library(shinythemes)
 library(shinydashboard)
+library(knitr)
 
 ui <- dashboardPage(
+  skin = "purple",
   dashboardHeader(title="Data Analytics in R!"),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Dataset Description",tabName = "dataset_description",icon = icon("dashboard")),
-      menuItem("Factor Frequency Distributions",tabName = "factor_distributions",icon = icon("th")),
-      menuItem("Chi-Square test of Factors",tabName = "chi_sq"),
-      menuItem("Regression Between Period Marks", tabName = "regression"),
-      menuItem("References"),
-      menuItem("About")
+      menuItem("Factor Frequency Distributions",tabName = "factor_distributions",icon = icon("chart-bar",lib="font-awesome")),
+      menuItem("Chi-Square test of Factors",tabName = "chi_sq",icon=icon("th")),
+      menuItem("Regression", tabName = "regression", icon = icon("line-chart", lib="font-awesome")),
+      menuItem("About",tabName = "about", icon = icon("child", lib="font-awesome"))
     )
   ),
   dashboardBody(
@@ -22,12 +23,30 @@ ui <- dashboardPage(
           fluidRow(
             column(
               12,
-              tags$h2("DATASET DESCRIPTION")
+              tags$h2("DATASET DESCRIPTION"),
+              tags$hr(style="border-color: purple;"),
             ),
-            DT::dataTableOutput("data_table"),
-            hr(),
+            column(
+              12,
+              DT::dataTableOutput("data_table"),
+            ),
+            tags$hr(style="border-color: purple;"),
             fluidRow(
-              verbatimTextOutput("student_summary")
+              column(
+                12,
+                box(title = "Dataset Description"
+                    , status = "primary", solidHeader = F
+                    , collapsible = T, width = 12
+                    , column(12, align="center", tableOutput('dataset_description')))  
+              )
+            ),
+            fluidRow(
+              column(
+                12,
+                tags$h3("Dataset Summary"),
+                tags$hr(style="border-color: purple;"),
+                verbatimTextOutput("student_summary")
+              )
             )
           )
         )
@@ -38,6 +57,7 @@ ui <- dashboardPage(
           fluidRow(
             tags$h2("DISTRIBUTION OF FACTOR VARIABLES")
           ),
+          tags$hr(style="border-color: purple;"),
           fluidRow(
             column(
               3,
@@ -56,7 +76,7 @@ ui <- dashboardPage(
           fluidRow(
             tags$h2("CHI - SQUARE TEST OF INDEPENDENCE")
           ),
-          hr(),
+          tags$hr(style="border-color: purple;"),
           fluidRow(
             column(
               4, 
@@ -110,18 +130,41 @@ ui <- dashboardPage(
           fluidRow(
             column(
               12,
-              tags$h2("REGRESSION DIFFERENT BETWEEN PERIOD MARKs")
+              tags$h2("REGRESSION")
             )
           ),
+          tags$hr(style="border-color: purple;"),
           fluidRow(
             column(
               4,
-              selectInput("x_axis_regression","X-Axis Regression Variable",choices = c("G1","G2","G3")),
-              selectInput("y_axis_regression","Y-Axis Regression Variable",choices = c("G1","G2","G3")),
+              selectInput("x_axis_regression","X-Axis Regression Variable",choices = c("G1","G2","G3","absences","age")),
+              selectInput("y_axis_regression","Y-Axis Regression Variable",choices = c("G1","G2","G3","absences","age")),
             ),
             column(
               8,
               plotOutput("regression")
+            )
+          )
+        )
+      ),
+      tabItem(
+        tabName = "about",
+        fluidPage(
+          fluidRow(
+            tags$h2("ABOUT")
+          ),
+          tags$hr(style="border-color: purple;"),
+          fluidRow(
+            column(
+              4, 
+              img(src = "me.jpeg")
+            ),
+            column(
+              8,
+              tags$h4("Made By - Jishant Prashant Acharya"),
+              tags$h4("Student ID - 0720442"),
+              tags$h4("Program : Applied Modelling and Quantitative Methods : Big Data Analytics"),
+              tags$h4("Subject : AMOD5250H - Data Analytics with R")
             )
           )
         )

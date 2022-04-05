@@ -5,9 +5,9 @@ account: jishant-acharya
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6018123
-bundleId: 5767493
+bundleId: 5768169
 url: https://jishant-acharya.shinyapps.io/term_project/
-when: 1649182005.67897
-lastSyncTime: 1649182005.67897
+when: 1649195578.29918
+lastSyncTime: 1649195578.29918
 asMultiple: FALSE
 asStatic: FALSE
