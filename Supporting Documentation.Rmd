@@ -1,0 +1,12 @@
+---
+title: "Supporting Documentation - 5250H Data Analytics with R"
+author: "Jishant Acharya"
+date: "05/04/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
