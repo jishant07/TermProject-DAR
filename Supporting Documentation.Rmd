@@ -54,9 +54,8 @@ There are 2 ways to run the project. It's code is hosted on an open-source repo 
 
 -   Selecting an Option to run the app using : Once we have opened the project into RStudio and installed all the above mentioned dependencies. It's time to run the project. We can run the project in 2 very simple steps.
 
-    1.  Select where the project should run
-
-    ![](options.png)\
+    1.  Select where the project should run  
+    ![](options.png)  
     From the menu above we can select it to run in a separate window, in the viewer pane to the right or an external browser.
 
     2.  Once selected, we can then press the Run App Button for the app to run\
