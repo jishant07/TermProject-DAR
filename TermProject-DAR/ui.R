@@ -153,6 +153,17 @@ ui <- dashboardPage(
               8,
               plotOutput("regression")
             )
+          ),
+          tags$hr(style="border-color: purple;"),
+          fluidRow(
+            column(
+              12,
+              tags$h4("Results")
+            ),
+            column(
+              12,
+              verbatimTextOutput("regression_test") 
+            )
           )
         )
       ),

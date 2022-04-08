@@ -1,6 +1,5 @@
 library(ggplot2)
 library(corrplot)
-library(dplyr)
 library(DT)
 
 # Reading data in the beginning.
@@ -87,6 +86,14 @@ server <- function(input, output, session) {
     ggplot(studentPerformanceData,aes_string(x=input$x_axis_regression, y=input$y_axis_regression)) + geom_point(color=tertiary) + 
       geom_smooth(method = 'lm', color=primary) + 
       theme(axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"))
+  })
+  
+  
+  
+  output$regression_test <- renderPrint({
+    x.axis <- as.matrix(studentPerformanceData[input$x_axis_regression])
+    y.axis <- as.matrix(studentPerformanceData[input$y_axis_regression])
+    lm(data= studentPerformanceData, y.axis ~ x.axis)
   })
   
   # Renders the Table for data set description
