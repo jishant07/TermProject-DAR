@@ -31,19 +31,42 @@ Student's attendance in the class can play a very important role when it comes t
 
 Gender can also play an important role in understanding the results of the student. When put into context the socio-economic factors, this could support all the previous researches in this realm. The research also deals with a bias from the selector's point of view. Nonetheless, gender's effect was seen during the study where most of the girls were found to be overachievers and very less of them were found to be in the underachiever group. The study also found the association of parents with the school to be a factor that added to be a significant factor in making an impact on a student's performance^6^.
 
+Human beings are constantly growing up, everyone of us has been through adolescence. It's the time when we all go through major changes with respect to everything in our body. The hair, the growth spurt so on and so forth. This is a very confusing time for anyone who goes through it without a lot of information about it. This period of time often comes with a thought that makes the student feel out of control. This can develop stress and confusion with respect to all these aspects in life. During this time the students seek out support in people and try to fit in the crowd. This has been a reason that affects their marks significantly^7^. The effect has been negative for the ones that are trying to find their footing in the crowd^7^. To mitigate this decline, we need to uplift as many facets of their life as possible as we have seen in context of other researches that intelligence isn't the only factor that determines the score level of the student but there are many factors that affect a student's marks. To prevent the decline in middle school performance of students it is important that we try to develop their environments at school and at home which help them feel supported^6^. The research concluded that social and psychological factors help predict the GPA with a greater accuracy. It also was able to gather a very unique insight into the data that showed that the importance of family involvement in a student's life was seen to be increasing in the female students rather than the male students in terms of their performance. 
+
 ## Instructions to Run
+
+### Information of Framework
+
+The project is made with a R Package known as "shiny". This is a package that helps us develop interactive web applications with R. It's very intuitive and helps us make pages with a lot of information crammed in them according to our requirements in a very beautiful manner. This also supports CSS themes that gives us all the more control over the design of the page.
+
+### Ways to run
+
+There are 2 ways to run the project. It's code is hosted on an open-source repo on GitHub. It can be run locally or online where it is hosted.
+
+1. _How to Run Locally_ : If we wish to run the project offline, we clone the open source project and then open the project folder in RStudio. After opening the source code in RStudio the steps that we need to follow in order for the project to run offline are :
+
+  + Installing of packages : The project runs on various dependencies that we need to have in our local machine for this project to run successfully. The command to install any missing dependencies is.
+  ``` install.packages("package_name") ``` .  
+  The dependencies required for the project to run successfully are:
+    1. shiny
+    2. DT
+    3. dplyr
+    4. corrplot
+    5. ggplot2
+    6.
+  + Selecting an Option to run using :
+
+2. _How to Run it Online_ : This is a very straight forward approach to run the project. The reason being that all the things that we had to do when this project was to run offline are already done.
+All that remains for use to do is to go to the link where the application is hosted. This is a way in which we can run the project in a standalone manner.
 
 ## Section Description
 
 ## References
 
-1. S. Kotsiantis , C. Pierrakeas & P. Pintelas ; Predicting Students’ Performance In Distance Learning
-Using Machine Learning Techniques
-2. Paulo Cortez and Alice Silva ; Using Data Mining to Predict Secondary School Student Performance
-3. Juan-José Navarro1, Javier García-Rubio, Pedro R. Olivares ; The Relative Age Effect and Its Influence
-on Academic Performance
-4. Kawtar Tani, Elizabeth Dalzell, Nathan Ehambaranathan, Sheela Murugasu and Anne Steele ; Eval-
-uation of factors affecting students’ performance in tertiary education
-5. Thomas R. Ford ; Social Factors Affecting Academic Performance: Further Evidence
-6. Yaoran Li , Jeff Allen , Alex Casillas ; Relating psychological and social factors to academic perfor-
-mance: A longitudinal investigation of high-poverty middle school students
+1. Wikipedia Contributors. Psychology [Internet]. Wikipedia. Wikimedia Foundation; 2018. Available from: https://en.wikipedia.org/wiki/Psychology
+2. KOTSIANTIS S, PIERRAKEAS C, PINTELAS P. PREDICTING STUDENTS’ PERFORMANCE IN DISTANCE LEARNING USING MACHINE LEARNING TECHNIQUES. Applied Artificial Intelligence. 2004 May;18(5):411–26.
+3. Cortez P, Silva A. USING DATA MINING TO PREDICT SECONDARY SCHOOL STUDENT PERFORMANCE. EUROSIS. 2008;5(978-9077381-39-7).
+4. Navarro J-J, García-Rubio J, Olivares PR. The Relative Age Effect and Its Influence on Academic Performance. Dalal K, editor. PLOS ONE. 2015 Oct 30;10(10):e0141895.
+5. Tani K, Dalzell E, Ehambaranathan N, Murugasu S, Steele A. Evaluation of factors affecting students’ performance in tertiary education. Journal of Pedagogical Research [Internet]. 2019 May 23;3(2):1–10. Available from: https://www.ijopr.com/download/evaluation-of-factors-affecting-students-performance-in-tertiary-education-6400.pdf?fbclid=IwAR20BgrOoBLQzJnfLJ1UCP05DZJ8tvtbJTjMFPbKc1MViV0HDdqkAi15g0U
+6. Ford TR. Social Factors Affecting Academic Performance: Further Evidence. The School Review. 1957 Dec;65(4):415–22.
+7. Li Y, Allen J, Casillas A. Relating psychological and social factors to academic performance: A longitudinal investigation of high-poverty middle school students. Journal of Adolescence. 2017 Apr;56:179–89.

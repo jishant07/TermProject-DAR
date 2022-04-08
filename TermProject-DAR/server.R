@@ -54,7 +54,7 @@ server <- function(input, output, session) {
     selectInput("distribution_variable","Select the Variable You want to see the distribution of",column_names)
   })
   
-  # PLots the Distribution graph as requested
+  # Plots the Distribution graph as requested
   output$distribution_plot <- renderPlot({
     column_selected <- input$distribution_variable
     ggplot(studentPerformanceData, aes_string(column_selected)) + geom_bar(fill=primary, color=tertiary) + 
